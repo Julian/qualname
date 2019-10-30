@@ -47,3 +47,8 @@ def test_nested_functions():
     assert qualname(f) == 'f'
     assert qualname(f()) == 'f.<locals>.g'
     assert qualname(C.D.h()) == 'C.D.h.<locals>.i.<locals>.j'
+
+
+def test_builtin():
+    assert qualname(int) == 'int'
+    assert qualname(DeprecationWarning) == 'DeprecationWarning'
